@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header,
+      nav,
+      main,
+      aside,
+      footer {
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+
+      .image-map {
+        background-color: black;
+      }
+
+      
+    </style>
+
+    <title>Semantic HTML Example</title>
+  </head>
+  <body>
+    <header>
+      <h1>Website Title</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Section 1</h2>
+        <p>Content of section 1 goes here.</p>
+      </section>
+
+      <section>
+        <h2>Section 2</h2>
+        <p>Content of section 2 goes here.</p>
+      </section>
+
+      <section class="test-section">
+        <form onchange="formChange(event.target.id,event.target.value)">
+          <fieldset>
+            <legend>User Information</legend>
+            <!-- Form fields go here -->
+            <label class="form-field" for="firstName">first name</label>
+            <input type="text" name="firstName" id="FN" />
+
+            <label class="form-field" for="lastName">last name</label>
+            <input type="text" name="lastName" id="LN" />
+        
+            <label class="form-field" for="role">select your role</label>
+            <select name="role" id="role">
+              choose
+              <option value="BM">Branch manager</option>
+              <option value="RM">Regional manager</option>
+              <option value="SM">State manager</option>
+            </select>
+          </fieldset>
+        </form>
+        <p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy the selected text.</p>
+        <div class="image-map">
+          <img
+            src="https://mycolor.space/img/color-gradient-spacecraft.svg"
+            alt="spacecraft"
+            usemap=""
+          />
+          <map name="planetmap">
+            <area
+              shape="rect"
+              coords="0,0,500,500"
+              href="index.html"
+              alt="Sun"
+            />
+            <!-- More areas for other planets -->
+          </map>
+        </div>
+        <div class="template">
+          <button onclick="showContent()">show content</button>
+          <template id="myTemplate">
+            <p>This content is hidden by default.</p>
+          </template>
+          <p>
+            The formula for the area of a circle is <var>πr<sup>2</sup></var
+            >.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <aside>
+      <h2>Additional Information</h2>
+      <p>Content of the aside goes here.</p>
+    </aside>
+
+    <footer>
+      <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+  </body>
+  <script>
+    function showContent() {
+      const template = document.getElementById("myTemplate");
+      console.log(template);
+      const clone = document.importNode(template.content, true);
+      document.body.appendChild(clone);
+    }
+
+    function formChange(id, value) {
+      console.log(id, value);
+    }
+  </script>
+</html>

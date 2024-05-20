@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<style>
+@keyframes moveUpDown {
+      0%, 100% {
+        transform: translateY(0); 
+        transform: translateX(0);
+        transform: translateZ(0);
+      }
+      50% {
+        transform: translateY(-40px);
+        /* transform: translateX(-100px); */
+        /* transform: translateZ(10); */
+        /* transform: translate(200px,-200px); */
+      }
+    }
+
+    .image-div{
+      display: flex;
+    }
+
+    /* Apply the animation to the image */
+    img.spaceCraft {
+      width: 80%; /* Adjust the size as needed */
+      height: auto;
+      animation: moveUpDown 2s ease-in-out infinite; /* Adjust the duration and timing function as needed */
+    }
+
+    .astronaut{
+      width: 60%;
+    }
+
+  html{
+    min-height: 100%;
+  }
+
+  body {
+    background-image: linear-gradient(
+      to right top,
+      #3a438b,
+      #a45390,
+      #e57682,
+      #ffaf7b,
+      #fff095
+    );
+  }
+
+  body > div {
+    max-width: 50%;
+  }
+
+
+</style>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="heading1">This is frontend</h1>
+      <button id="button">click me</button>
+      <label for="question">question</label>
+      <select name="test" id="select">
+        <option value="ans1" selected>answer1</option>
+        <option value="ans2">answer2</option>
+        <option value="ans3">answer3</option>
+        <option value="ans4" onchange="">answer4</option>
+      </select>
+
+      <h2>Basic Form</h2>
+
+      <form action="http://127.0.0.1:5000" method="POST ">
+        <!-- Text Input -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <br />
+
+        <!-- Password Input -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <br />
+
+        <!-- Radio Buttons -->
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" checked />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+        <br />
+
+        <!-- Checkbox -->
+        <input type="checkbox" id="subscribe" name="subscribe" value="yes" />
+        <label for="subscribe">Subscribe to newsletter</label>
+        <br />
+
+        <!-- Dropdown Menu -->
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option value="usa">USA</option>
+          <option value="canada">Canada</option>
+          <option value="uk">UK</option>
+        </select>
+        <br />
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="image-div">
+      <img
+        class="spaceCraft"
+        src="https://mycolor.space/img/color-gradient-spacecraft.svg"
+        alt="spacecraft"
+      />
+      <img  class="astronaut" src="https://mycolor.space/img/color-scheme-left.svg" alt="astronaut">
+      <img class="wave astronaut" src="https://mycolor.space/img/color-scheme-right.svg" alt="wave-astronaut">
+    </div>
+    <div>
+      <section></section>
+      <header></header><main></main><footer></footer>
+      <nav></nav>
+      <article></article><blockquote></blockquote>
+      <fieldset></fieldset><kbd></kbd><map name=""></map><area shape="" coords="" href="" alt=""><template></template><var></var>
+      
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
